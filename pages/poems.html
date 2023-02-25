@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link href="../css/style.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"></script>
+
+
+
+
+</head>
+
+<body>
+    <nav>
+
+        <ul>
+
+            <li><a href="poems.html">Poems</a></li>
+            <li><a href="folie.html">Folie</a></li>
+            <li><a href="sonorite.html">Sonorité</a></li>
+            <li><a href="interactivite.html">Interactivité</a></li>
+            <!--<li><a href="consommation.html">Consommation</a></li>-->
+        </ul>
+    </nav>
+
+    <div id="wrapper">
+
+        <header>
+            <li><a href="../index.html">intr-gal ;sq-ence</a></li>
+
+
+        </header>
+        <div class="poem">
+            <pre id="autocode">
+La perception visuelle des chiffres se bâtit par ces séries graphiques
+
+
+Elle s’élance et perçe les équations, s’adonnant à la représentation de ces sons
+
+
+Où la folie se rencontre à l’essence même de ce que nous pensions savoir
+
+
+Nous entraînes dans cet espace multi-sensoriel
+
+
+Une compilation sonore de ce qui puisse être, la représentation de simples séquences de nombres
+
+
+Voici à la suite, les suites en elle-mêmes.
+
+
+
+-Line O
+</pre>
+        </div>
+
+        <script>
+            var text = $('#autocode').text();
+            var length = text.length;
+            var timeOut;
+            var character = 0;
+
+            (function SKAutoCode() {
+                timeOut = setTimeout(function() {
+                    character++;
+                    var type = text.substring(0, character);
+                    $('#autocode').text(type);
+                    SKAutoCode();
+                    if (character == length) {
+                        clearTimeout(timeOut);
+                    }
+                }, 35);
+            }());
+
+        </script>
+    </div>
+
+
+
+
+
+
+</body>
+
+</html>

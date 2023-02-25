@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+      <meta http-equiv="refresh" content="20; url=pages/poems.html">
+    
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"></script>
+    </head>
+<body> <!--<nav>
+    
+    <ul>
+        <li><a href="integral.html">intr-gal ;sq-ence</a></li>
+        <li><a href="pages/poems.html">Poems</a></li>
+        <li><a href="pages/folie.html">Folie</a></li>
+        <li><a href="pages/sonorite.html">Sonorité</a></li>
+        <li><a href="pages/interactivite.html">Interactivité</a></li>
+        <li><a href="pages/consommation.html">Consommation</a></li>
+        </ul>
+    </nav>
+    -->
+    <div id="wrapper">
+    <a href="pages/poems.html">
+<canvas id="c">
+    attribute vec2 vertices;
+    void main(void) {
+        gl_Position=vec4(vertices, 0., 1.);
+    }
+    ---
+    precision lowp float;
+    uniform float time;
+    uniform vec2 mouse;
+    uniform vec2 resolution;
+    void main(void) {
+        vec2 m = mouse/resolution + vec2(sin(time/1e4), cos(time/1e4))/5.,
+             pt = gl_FragCoord.xy,
+             q = (pt+pt-resolution)/resolution.y/m.y;
+        for(int i=0; i!=13; i++)
+            q = -abs(q)/dot(q,q) + m;
+        gl_FragColor=vec4(vec3(q.r+q.g), 1.);
+    }
+</canvas>
+    </a>
+    
+    
+    </div>
+    
+    
+        <script src="js/animation.js"></script>
+
+    </body>
+
+
+</html>
